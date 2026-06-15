@@ -67,6 +67,9 @@ export const metadata: Metadata = {
       "Đăng ký môn học nhanh, an toàn và tự động. Hơn 1.000+ sinh viên đang dùng.",
   },
   category: "education",
+  verification: {
+    google: "-UOrMRTE4xqMgvmHIsWOyl52vf7QMlnNWnBtSJb1jnQ",
+  },
 };
 
 export default function RootLayout({
