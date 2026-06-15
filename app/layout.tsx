@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 const TITLE =
   "Auto ĐKMH All-in-One — Đăng ký môn học tự động cho sinh viên";
 const DESCRIPTION =
-  "Tiện ích Chrome giúp sinh viên đăng ký môn học tự động: giải CAPTCHA, tự đăng nhập, giữ phiên, quản lý nhiều tài khoản và trợ lý AI tra cứu lịch học, điểm số. Hỗ trợ VNUA, PTIT, HCMIU, HANU, FTU và nhiều trường.";
+  "Tiện ích Chrome giúp sinh viên đăng ký môn học tự động: giải CAPTCHA, tự đăng nhập, giữ phiên, quản lý nhiều tài khoản và trợ lý AI tra cứu lịch học, điểm số. Hỗ trợ VNUA, PTIT, HCMIU, HANU, FTU, HCMUAF, SGU, STU và nhiều trường.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -35,6 +35,11 @@ export const metadata: Metadata = {
     "đăng ký môn học VNUA",
     "đăng ký môn học PTIT",
     "đăng ký môn học HCMIU",
+    "đăng ký môn học HANU",
+    "đăng ký môn học FTU",
+    "đăng ký môn học HCMUAF",
+    "đăng ký môn học SGU",
+    "đăng ký môn học STU",
   ],
   authors: [{ name: "langlaphieuluu9x" }],
   creator: "langlaphieuluu9x",
