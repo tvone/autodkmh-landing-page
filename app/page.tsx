@@ -38,10 +38,10 @@ const FEATURES = [
     desc: "Hỏi đáp thông tin học vụ, tra cứu lịch học, điểm số và lịch thi nhanh chóng bằng AI.",
   },
   {
-    icon: "star",
+    icon: "chart",
     color: "#818cf8",
-    title: "Tự động đánh giá giảng dạy",
-    desc: "Hoàn thành phiếu đánh giá môn học tự động, bạn vẫn có thể chỉnh sửa điểm sau đó.",
+    title: "Hỗ trợ xem điểm và thời khóa biểu",
+    desc: "Xem danh sách giảng viên và điểm của sinh viên bất kỳ mà bạn muốn.",
   },
 ];
 
@@ -167,6 +167,13 @@ function Icon({ name, className = "" }: { name: string; className?: string }) {
       <path d="M12 2a3 3 0 00-3 3v6a3 3 0 006 0V5a3 3 0 00-3-3zM5 11a7 7 0 0014 0M12 18v3" />
     ),
     send: <path d="M12 19V5M5 12l7-7 7 7" />,
+    chart: (
+      <>
+        <path d="M3 3v18h18" />
+        <path d="M7 14l3-3 3 3 4-5" />
+        <path d="M17 9h0" />
+      </>
+    ),
   };
   return (
     <svg
