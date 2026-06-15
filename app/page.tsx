@@ -93,7 +93,7 @@ const BATCH_CHECKS = [
 const FAQS = [
   {
     q: "Auto ĐKMH có an toàn không?",
-    a: "Tiện ích tích hợp xác thực bảo mật hai lớp và chỉ hoạt động trên cổng đăng ký của trường bạn. Thông tin đăng nhập được lưu cục bộ ngay trên máy của bạn.",
+    a: "Tiện ích đã được Google phê duyệt trên cửa hàng và chỉ hoạt động trên cổng đăng ký của trường bạn. Thông tin đăng nhập được lưu cục bộ ngay trên máy của bạn.",
   },
   {
     q: "Tôi có cần biết kỹ thuật để dùng không?",
@@ -101,7 +101,7 @@ const FAQS = [
   },
   {
     q: "Trường của tôi có được hỗ trợ không?",
-    a: "Tiện ích hỗ trợ VNUA, PTIT, HCMIU, HANU, FTU và nhiều trường dùng nền tảng tương thích. Hãy cài thử để kiểm tra trường của bạn.",
+    a: "Tiện ích hỗ trợ VNUA, PTIT, HCMIU, HANU, FTU, HCMUAF, SGU, STU và nhiều trường dùng nền tảng tương thích. Hãy cài thử để kiểm tra trường của bạn.",
   },
   {
     q: "Auto ĐKMH có miễn phí không?",
