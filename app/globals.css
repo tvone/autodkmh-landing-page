@@ -100,6 +100,36 @@
   to { stroke-dashoffset: -16; }
 }
 
+/* Sequential node activation: the highlight sweeps node-by-node, then loops.
+   Idle = dim/neutral; active = bright cyan + glow + slight pop.
+   Each node shares the duration with a staggered animation-delay. */
+@keyframes mk-seq-node {
+  0% {
+    transform: scale(1);
+    border-color: rgba(255, 255, 255, 0.10);
+    background: rgba(24, 24, 42, 0.82);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04), 0 6px 18px rgba(0, 0, 0, 0.45);
+  }
+  9%, 18% {
+    transform: scale(1.05);
+    border-color: rgba(34, 211, 238, 0.75);
+    background: rgba(34, 211, 238, 0.12);
+    box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.55), 0 0 28px rgba(34, 211, 238, 0.5), 0 10px 28px rgba(34, 211, 238, 0.22);
+  }
+  28%, 100% {
+    transform: scale(1);
+    border-color: rgba(255, 255, 255, 0.10);
+    background: rgba(24, 24, 42, 0.82);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04), 0 6px 18px rgba(0, 0, 0, 0.45);
+  }
+}
+
+@keyframes mk-seq-icon {
+  0% { background: rgba(255, 255, 255, 0.05); color: #9a9ab0; }
+  9%, 18% { background: rgba(34, 211, 238, 0.22); color: #22d3ee; }
+  28%, 100% { background: rgba(255, 255, 255, 0.05); color: #9a9ab0; }
+}
+
 @keyframes mk-shimmer {
   from { transform: translateX(-120%); }
   to { transform: translateX(120%); }
@@ -115,7 +145,7 @@ body {
   font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 ::selection {

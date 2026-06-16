@@ -54,9 +54,12 @@ const UNIVERSITIES = [
   "HCMUAF",
   "SGU",
   "STU",
-  "UEH",
-  "NEU",
-  "HUST",
+  "HUMG",
+  "EIU",
+  "DHV",
+  // "UEH",
+  // "NEU",
+  // "HUST",
 ];
 
 const STATS = [
@@ -78,6 +81,10 @@ const PROCESS_CHECKS = [
   {
     b: "Gửi yêu cầu tốc độ cao",
     t: "tự động retry nếu nghẽn cho tới khi đăng ký thành công",
+  },
+  {
+    b: "Tự lưu & xác nhận đăng ký",
+    t: "tự bấm Lưu để chốt học phần, không lo chọn xong mà quên lưu",
   },
 ];
 
@@ -101,7 +108,7 @@ const FAQS = [
   },
   {
     q: "Trường của tôi có được hỗ trợ không?",
-    a: "Tiện ích hỗ trợ VNUA, PTIT, HCMIU, HANU, FTU, HCMUAF, SGU, STU và nhiều trường dùng nền tảng tương thích. Hãy cài thử để kiểm tra trường của bạn.",
+    a: "Tiện ích hỗ trợ VNUA, PTIT, HCMIU, HANU, FTU, HCMUAF, SGU, STU, HUMG, EIU, DHV và nhiều trường dùng nền tảng tương thích. Hãy cài thử để kiểm tra trường của bạn.",
   },
   {
     q: "Auto ĐKMH có miễn phí không?",
@@ -325,27 +332,29 @@ function NodeCard({
   icon,
   label,
   sub,
-  active = false,
+  step = 0,
   className = "",
 }: {
   icon: string;
   label: string;
   sub: string;
-  active?: boolean;
+  color?: string;
+  step?: number;
   className?: string;
 }) {
+  const delay = `${step * 1.4}s`;
   return (
     <div
-      className={`absolute flex w-[150px] items-center gap-2.5 rounded-xl border px-3 py-2.5 backdrop-blur-sm ${
-        active
-          ? "animate-node-pulse border-lime-100/50 bg-lime-100/[0.08]"
-          : "border-white/10 bg-bg-300/80"
-      } ${className}`}
+      className={`absolute flex w-[150px] items-center gap-2.5 rounded-xl border px-3 py-2.5 backdrop-blur-sm ${className}`}
+      style={{
+        animation: `mk-seq-node 5.6s ease-in-out ${delay} infinite`,
+      }}
     >
       <span
-        className={`flex h-7 w-7 flex-none items-center justify-center rounded-lg ${
-          active ? "bg-lime-100/20 text-lime-100" : "bg-white/5 text-fg-200"
-        }`}
+        className="flex h-7 w-7 flex-none items-center justify-center rounded-lg"
+        style={{
+          animation: `mk-seq-icon 5.6s ease-in-out ${delay} infinite`,
+        }}
       >
         <Icon name={icon} className="h-4 w-4" />
       </span>
@@ -361,9 +370,9 @@ function NodeCard({
 
 function NodeGraph() {
   return (
-    <WindowFrame title="auto-dkmh · quy trình đăng ký" className="relative">
+    <WindowFrame title="Auto DKMH · Quy trình đăng ký" className="relative">
       <div className="relative h-[380px] w-full">
-        {/* dashed connectors */}
+        {/* curved animated connectors */}
         <svg
           viewBox="0 0 100 100"
           preserveAspectRatio="none"
@@ -371,52 +380,64 @@ function NodeGraph() {
           aria-hidden="true"
         >
           <path
-            d="M18,20 C32,30 42,38 52,46"
+            d="M20,17 C36,23 40,38 53,45"
             fill="none"
-            stroke="rgba(34,211,238,0.5)"
+            stroke="rgba(34,211,238,0.55)"
             strokeWidth="0.5"
-            strokeDasharray="2 2"
+            strokeDasharray="0.4 1.6"
+            strokeLinecap="round"
             className="animate-dash"
           />
           <path
-            d="M52,56 C42,64 30,70 22,76"
+            d="M50,53 C42,64 30,70 23,77"
             fill="none"
-            stroke="rgba(255,255,255,0.18)"
+            stroke="rgba(34,211,238,0.4)"
             strokeWidth="0.5"
-            strokeDasharray="2 2"
+            strokeDasharray="0.4 1.6"
+            strokeLinecap="round"
+            className="animate-dash"
           />
           <path
-            d="M58,56 C58,64 60,70 60,75"
+            d="M57,53 C60,62 60,71 60,77"
             fill="none"
-            stroke="rgba(255,255,255,0.18)"
+            stroke="rgba(34,211,238,0.4)"
             strokeWidth="0.5"
-            strokeDasharray="2 2"
+            strokeDasharray="0.4 1.6"
+            strokeLinecap="round"
+            className="animate-dash"
           />
         </svg>
 
         <NodeCard
           icon="login"
           label="Đăng nhập"
-          sub="tự điền tài khoản"
+          sub="Tự điền tài khoản"
+          color="#22d3ee"
+          step={0}
           className="left-[5%] top-[8%]"
         />
         <NodeCard
           icon="bolt"
           label="Đăng ký môn"
-          sub="gửi yêu cầu · tốc độ cao"
-          active
+          sub="Tốc độ mili giây"
+          color="#22d3ee"
+          step={1}
           className="left-[40%] top-[40%]"
         />
         <NodeCard
           icon="book"
           label="Toán rời rạc"
-          sub="đã đăng ký ✓"
+          sub="Đã đăng ký ✓"
+          color="#22d3ee"
+          step={2}
           className="left-[8%] top-[74%]"
         />
         <NodeCard
           icon="book"
           label="Cơ sở dữ liệu"
-          sub="đã đăng ký ✓"
+          sub="Đã đăng ký ✓"
+          color="#22d3ee"
+          step={3}
           className="left-[46%] top-[74%]"
         />
       </div>
@@ -691,7 +712,7 @@ function JsonLd() {
 
 export default function Home() {
   return (
-    <div className="relative flex flex-1 flex-col overflow-hidden">
+    <div className="relative flex flex-1 flex-col overflow-x-clip">
       <JsonLd />
       {/* global background */}
       <div className="pointer-events-none absolute inset-0 -z-10">
@@ -767,7 +788,7 @@ export default function Home() {
               </span>
             </div>
 
-            <h1 className="mt-6 text-balance text-4xl font-extrabold leading-[1.08] tracking-tight text-fg-100 sm:text-6xl">
+            <h1 className="mt-6 text-balance text-4xl font-extrabold leading-[1.15] tracking-tight text-fg-100 sm:text-6xl">
               Lấp đầy thời khóa biểu <span className="lime-text">tự động</span>,
               không lo nghẽn mạng
             </h1>
@@ -945,13 +966,19 @@ export default function Home() {
           Hỗ trợ nhiều nền tảng đăng ký phổ biến tại Việt Nam
         </p>
         <div className="relative mt-8 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_12%,black_88%,transparent)]">
-          <div className="flex w-max animate-marquee gap-4">
+          <div className="flex w-max animate-marquee items-center gap-10">
             {[...UNIVERSITIES, ...UNIVERSITIES].map((u, i) => (
-              <span
-                key={i}
-                className="flex-none rounded-full border border-white/8 bg-white/[0.02] px-7 py-3 text-base font-bold text-fg-200"
-              >
-                {u}
+              <span key={i} className="flex flex-none items-center gap-2.5">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`/logos/${u.toLowerCase()}.png`}
+                  alt={`Logo ${u}`}
+                  loading="lazy"
+                  className="h-7 w-7 flex-none object-contain"
+                />
+                <span className="whitespace-nowrap text-base font-semibold text-fg-300">
+                  {u}
+                </span>
               </span>
             ))}
           </div>
