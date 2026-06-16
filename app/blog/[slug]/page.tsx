@@ -28,6 +28,20 @@ export async function generateMetadata({
       type: "article",
       publishedTime: post.date,
       url: `${SITE_URL}/blog/${post.slug}`,
+      images: [
+        {
+          url: "/og.png",
+          width: 1200,
+          height: 630,
+          alt: "Auto ĐKMH — Đăng ký môn học tự động cho sinh viên",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+      images: ["/og.png"],
     },
   };
 }

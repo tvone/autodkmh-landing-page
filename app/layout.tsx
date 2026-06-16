@@ -70,12 +70,21 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     locale: "vi_VN",
     type: "website",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Auto ĐKMH — Đăng ký môn học tự động cho sinh viên",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: TITLE,
     description:
       "Đăng ký môn học nhanh, an toàn và tự động. Hơn 1.000+ sinh viên đang dùng.",
+    images: ["/og.png"],
   },
   category: "education",
   verification: {

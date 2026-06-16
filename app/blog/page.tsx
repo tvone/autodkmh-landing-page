@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     description:
       "Mẹo và hướng dẫn đăng ký tín chỉ không lo nghẽn mạng cho sinh viên các trường.",
     type: "website",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Auto ĐKMH — Đăng ký môn học tự động cho sinh viên",
+      },
+    ],
   },
 };
 
