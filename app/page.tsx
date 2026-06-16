@@ -825,7 +825,7 @@ export default function Home() {
               không lo nghẽn mạng
             </h1>
 
-            <p className="mx-auto mt-6 max-w-xl text-pretty text-lg leading-8 text-fg-300 lg:mx-0">
+            <p className="mx-auto mt-6 max-w-xl text-pretty text-base leading-7 text-fg-300 lg:mx-0">
               Auto ĐKMH biến trình duyệt thành trợ thủ đăng ký môn học: tự giải
               CAPTCHA, tự đăng nhập, canh đúng giờ mở cổng và đăng ký hàng loạt
               chỉ trong tích tắc.
@@ -1167,7 +1167,7 @@ export default function Home() {
           <br />
           <span className="lime-text">Hãy để Auto ĐKMH lo.</span>
         </h2>
-        <p className="mx-auto mt-6 max-w-xl text-lg text-fg-300">
+        <p className="mx-auto mt-6 max-w-xl text-base text-fg-300">
           Cài tiện ích Chrome miễn phí. Đăng ký nhẹ nhàng như chưa từng có.
         </p>
         <div className="mt-9 flex flex-col items-center justify-center gap-3.5 sm:flex-row">
