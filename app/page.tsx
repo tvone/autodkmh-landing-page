@@ -692,6 +692,18 @@ function JsonLd() {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebSite",
+        name: "Auto ĐKMH",
+        url: SITE_URL,
+        inLanguage: "vi",
+      },
+      {
+        "@type": "Organization",
+        name: "Auto ĐKMH",
+        url: SITE_URL,
+        logo: `${SITE_URL}/icon.svg`,
+      },
+      {
         "@type": "SoftwareApplication",
         name: "Auto ĐKMH All-in-One",
         applicationCategory: "BrowserApplication",
