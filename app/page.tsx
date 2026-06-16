@@ -226,17 +226,11 @@ function Icon({ name, className = "" }: { name: string; className?: string }) {
 function ChromeLogo({ className = "" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
-      <circle cx="12" cy="12" r="10" fill="#fff" />
-      <circle cx="12" cy="12" r="4.2" fill="#4285F4" />
-      <path d="M12 7.8h8.6A10 10 0 0012 2v5.8z" fill="#EA4335" />
-      <path
-        d="M20.6 7.8H12a4.2 4.2 0 013.7 6.3L12 22a10 10 0 008.6-14.2z"
-        fill="#FBBC05"
-      />
-      <path
-        d="M3.4 7A10 10 0 0012 22l3.7-7.9A4.2 4.2 0 018.3 14L3.4 7z"
-        fill="#34A853"
-      />
+      <path d="M12 12 2.47 6.5A11 11 0 0 1 21.53 6.5Z" fill="#EA4335" />
+      <path d="M12 12 21.53 6.5A11 11 0 0 1 12 23Z" fill="#FBBC04" />
+      <path d="M12 12 12 23A11 11 0 0 1 2.47 6.5Z" fill="#34A853" />
+      <circle cx="12" cy="12" r="5.7" fill="#fff" />
+      <circle cx="12" cy="12" r="4.6" fill="#1A73E8" />
     </svg>
   );
 }
@@ -304,7 +298,7 @@ function StoreButton({
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center gap-2 rounded-full border border-lime-100/30 bg-lime-100/[0.06] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-lime-100">
+    <span className="inline-flex items-center gap-2 rounded-full border border-lime-100/30 bg-lime-100/[0.06] px-4 py-1.5 text-xs font-semibold tracking-wide text-lime-100">
       {children}
     </span>
   );
@@ -315,7 +309,7 @@ function CheckList({ items }: { items: { b: string; t: string }[] }) {
     <ul className="mt-7 space-y-4">
       {items.map((it) => (
         <li key={it.b} className="flex items-start gap-3">
-          <span className="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-md bg-lime-100 text-[#06222a]">
+          <span className="mt-1 flex h-5 w-5 flex-none items-center justify-center rounded-md bg-lime-100/15 text-lime-100">
             <Icon name="check" className="h-3.5 w-3.5" />
           </span>
           <p className="text-[15px] leading-7 text-fg-300">
@@ -495,8 +489,8 @@ function QueueWindow() {
               }}
             >
               <span
-                className={`flex h-5 w-5 flex-none items-center justify-center rounded-full ${
-                  running ? "text-lime-100" : "bg-lime-100 text-[#06222a]"
+                className={`flex h-5 w-5 flex-none items-center justify-center rounded-md ${
+                  running ? "text-lime-100" : "bg-lime-100/15 text-lime-100"
                 }`}
               >
                 {running ? (
@@ -541,7 +535,7 @@ function ResultWindow() {
               }}
             >
               <div className="flex items-center gap-1.5">
-                <span className="flex h-4 w-4 items-center justify-center rounded-full bg-lime-100 text-[#06222a]">
+                <span className="flex h-4 w-4 items-center justify-center rounded-md bg-lime-100/15 text-lime-100">
                   <Icon name="check" className="h-2.5 w-2.5" />
                 </span>
                 <span className="text-[10px] font-medium text-lime-100">
@@ -717,7 +711,11 @@ function JsonLd() {
         review: TESTIMONIALS.map((t) => ({
           "@type": "Review",
           author: { "@type": "Person", name: t.name },
-          reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: "5",
+            bestRating: "5",
+          },
           reviewBody: t.text,
           datePublished: t.date.split("/").reverse().join("-"),
         })),
@@ -820,7 +818,7 @@ export default function Home() {
               </span>
             </div>
 
-            <h1 className="mt-6 text-balance text-4xl font-extrabold leading-[1.2] tracking-tight text-fg-100 sm:text-5xl">
+            <h1 className="mt-6 text-balance text-4xl font-extrabold leading-[1.15] tracking-tight text-fg-100 sm:text-6xl">
               Lấp đầy thời khóa biểu <span className="lime-text">tự động</span>,
               không lo nghẽn mạng
             </h1>
@@ -998,9 +996,12 @@ export default function Home() {
           Hỗ trợ nhiều nền tảng đăng ký phổ biến tại Việt Nam
         </p>
         <div className="relative mt-8 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_12%,black_88%,transparent)]">
-          <div className="flex w-max animate-marquee items-center gap-10">
+          <div className="flex w-max animate-marquee items-center gap-16 hover:[animation-play-state:paused]">
             {[...UNIVERSITIES, ...UNIVERSITIES].map((u, i) => (
-              <span key={i} className="flex flex-none items-center gap-2.5">
+              <span
+                key={i}
+                className="group flex flex-none cursor-default items-center gap-2.5"
+              >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={`/logos/${u.toLowerCase()}.png`}
@@ -1008,7 +1009,7 @@ export default function Home() {
                   loading="lazy"
                   className="h-7 w-7 flex-none object-contain"
                 />
-                <span className="whitespace-nowrap text-base font-semibold text-fg-300">
+                <span className="whitespace-nowrap text-base font-semibold text-fg-300 transition-colors duration-300 group-hover:text-fg-100">
                   {u}
                 </span>
               </span>
