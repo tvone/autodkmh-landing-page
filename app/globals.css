@@ -19,8 +19,8 @@
   --color-fg-100: #ffffff;
   --color-fg-200: #e7e7f0;
   --color-fg-300: #a6a6bd;
-  --color-fg-400: #7a7a90;
-  --color-fg-500: #55556a;
+  --color-fg-400: #9090a6;
+  --color-fg-500: #74748c;
   /* brand tokens — cyan primary (from logo), pink as small accent */
   --color-lime-100: #22d3ee; /* cyan — primary */
   --color-lime-200: #06b6d4; /* cyan — hover/darker */
@@ -220,4 +220,25 @@ body {
 }
 .group:hover .shimmer::before {
   animation: mk-shimmer 1.1s ease;
+}
+
+/* Keyboard focus: clear cyan ring on dark glass (UA default outline is nearly
+   invisible on these surfaces). Only fires for keyboard users via :focus-visible. */
+:focus-visible {
+  outline: 2px solid var(--color-lime-100);
+  outline-offset: 2px;
+}
+
+/* Respect reduced-motion: the page uses ~15 infinite animations (marquee, floating
+   tiles, dashed connectors, sequential nodes, spinners, ping, progress, shimmer).
+   Users who opt out get a still, fully legible page. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }

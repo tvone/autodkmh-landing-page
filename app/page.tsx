@@ -788,7 +788,7 @@ export default function Home() {
               </span>
             </div>
 
-            <h1 className="mt-6 text-balance text-4xl font-extrabold leading-[1.15] tracking-tight text-fg-100 sm:text-6xl">
+            <h1 className="mt-6 text-balance text-4xl font-extrabold leading-[1.2] tracking-tight text-fg-100 sm:text-6xl">
               Lấp đầy thời khóa biểu <span className="lime-text">tự động</span>,
               không lo nghẽn mạng
             </h1>
@@ -830,7 +830,7 @@ export default function Home() {
       <section id="features" className="mx-auto w-full max-w-7xl px-5 py-20">
         <div className="mx-auto max-w-2xl text-center">
           <Eyebrow>Tính năng</Eyebrow>
-          <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-fg-100 sm:text-5xl">
+          <h2 className="mt-5 text-3xl font-extrabold leading-tight tracking-tight text-fg-100 sm:text-5xl">
             Mọi thứ bạn cần để{" "}
             <span className="lime-text">đăng ký thành công</span>
           </h2>
@@ -989,7 +989,7 @@ export default function Home() {
       <section id="faq" className="mx-auto w-full max-w-3xl px-5 py-20">
         <div className="text-center">
           <Eyebrow>FAQ</Eyebrow>
-          <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-fg-100 sm:text-5xl">
+          <h2 className="mt-5 text-3xl font-extrabold leading-tight tracking-tight text-fg-100 sm:text-5xl">
             Câu hỏi thường gặp
           </h2>
         </div>
@@ -1016,7 +1016,7 @@ export default function Home() {
         <div className="flex items-end justify-between gap-4">
           <div>
             <Eyebrow>Blog</Eyebrow>
-            <h2 className="mt-5 text-3xl font-bold tracking-tight display-grad sm:text-4xl">
+            <h2 className="mt-5 text-3xl font-bold leading-tight tracking-tight display-grad sm:text-4xl">
               Hướng dẫn đăng ký theo từng trường
             </h2>
           </div>
