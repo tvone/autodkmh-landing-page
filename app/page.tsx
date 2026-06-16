@@ -820,7 +820,7 @@ export default function Home() {
               </span>
             </div>
 
-            <h1 className="mt-6 text-balance text-4xl font-extrabold leading-[1.2] tracking-tight text-fg-100 sm:text-6xl">
+            <h1 className="mt-6 text-balance text-4xl font-extrabold leading-[1.2] tracking-tight text-fg-100 sm:text-5xl">
               Lấp đầy thời khóa biểu <span className="lime-text">tự động</span>,
               không lo nghẽn mạng
             </h1>
@@ -1024,25 +1024,33 @@ export default function Home() {
           <h2 className="mt-5 text-3xl font-extrabold leading-tight tracking-tight text-fg-100 sm:text-5xl">
             Sinh viên nói gì về <span className="lime-text">Auto ĐKMH</span>
           </h2>
-          <p className="mt-4 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 text-lg text-fg-300">
-            <span className="lime-text font-bold">★★★★★</span>
-            5.0 · 6 đánh giá · 1.000+ người dùng trên Chrome Web Store
-          </p>
         </div>
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {TESTIMONIALS.map((t) => (
             <figure
               key={t.name}
-              className="flex flex-col rounded-2xl border border-white/8 bg-white/[0.015] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-white/15"
+              className="relative flex flex-col overflow-hidden rounded-2xl border p-6 transition-all duration-300 hover:-translate-y-1"
+              style={{
+                background: `radial-gradient(120% 120% at 0% 0%, ${t.color}1f 0%, rgba(255,255,255,0.015) 45%)`,
+                borderColor: `${t.color}3d`,
+              }}
             >
+              <span
+                className="pointer-events-none absolute right-4 top-1 select-none font-serif text-7xl leading-none"
+                style={{ color: `${t.color}24` }}
+                aria-hidden="true"
+              >
+                ”
+              </span>
               <div
-                className="lime-text text-base font-bold"
+                className="text-base font-bold tracking-wide"
+                style={{ color: t.color }}
                 aria-label="5 trên 5 sao"
               >
                 ★★★★★
               </div>
-              <blockquote className="mt-4 flex-1 text-pretty text-[15px] leading-7 text-fg-200">
+              <blockquote className="relative mt-4 flex-1 text-pretty text-[15px] leading-7 text-fg-200">
                 “{t.text}”
               </blockquote>
               <figcaption className="mt-5 flex items-center gap-3">
@@ -1064,6 +1072,17 @@ export default function Home() {
               </figcaption>
             </figure>
           ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <a
+            href={STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-lime-100 transition hover:brightness-110"
+          >
+            Đọc tất cả đánh giá trên Chrome Web Store →
+          </a>
         </div>
       </section>
 
@@ -1143,7 +1162,7 @@ export default function Home() {
       {/* ------------------------------- CTA --------------------------------- */}
       <section className="relative mx-auto w-full max-w-7xl px-5 py-24 text-center">
         <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-72 w-[44rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-lime-100/[0.10] blur-[130px]" />
-        <h2 className="mx-auto max-w-3xl text-4xl font-extrabold leading-tight tracking-tight text-fg-100 sm:text-6xl">
+        <h2 className="mx-auto max-w-3xl text-4xl font-extrabold leading-tight tracking-tight text-fg-100 sm:text-5xl">
           Đừng canh giờ đăng ký nữa.
           <br />
           <span className="lime-text">Hãy để Auto ĐKMH lo.</span>
