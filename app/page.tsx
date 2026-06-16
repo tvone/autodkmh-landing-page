@@ -124,6 +124,31 @@ const FAQS = [
   },
 ];
 
+// Real 5★ reviews from the Chrome Web Store listing — kept verbatim
+const TESTIMONIALS = [
+  {
+    name: "Tran Nam",
+    initial: "T",
+    color: "#ff3d7f",
+    date: "02/06/2024",
+    text: "Cảm ơn ad, nhờ tool này mình đăng kí môn học rất dễ dàng, không lo thất học :D",
+  },
+  {
+    name: "Le Tien",
+    initial: "L",
+    color: "#22d3ee",
+    date: "04/06/2024",
+    text: "Hay quá ạ, tool rất hữu ích nên sử dụng.",
+  },
+  {
+    name: "Minh Tran",
+    initial: "M",
+    color: "#38bdf8",
+    date: "30/07/2024",
+    text: "Tuyệt vời ô mặt trời.",
+  },
+];
+
 const DAYS = ["T2", "T3", "T4", "T5", "T6"];
 
 // Course blocks placed onto the timetable grid (day 0-4, period row 0-3)
@@ -689,6 +714,13 @@ function JsonLd() {
           ratingCount: "6",
           bestRating: "5",
         },
+        review: TESTIMONIALS.map((t) => ({
+          "@type": "Review",
+          author: { "@type": "Person", name: t.name },
+          reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+          reviewBody: t.text,
+          datePublished: t.date.split("/").reverse().join("-"),
+        })),
       },
       {
         "@type": "FAQPage",
@@ -982,6 +1014,56 @@ export default function Home() {
               </span>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ---------------------------- Testimonials --------------------------- */}
+      <section className="mx-auto w-full max-w-7xl px-5 py-20">
+        <div className="mx-auto max-w-2xl text-center">
+          <Eyebrow>Đánh giá</Eyebrow>
+          <h2 className="mt-5 text-3xl font-extrabold leading-tight tracking-tight text-fg-100 sm:text-5xl">
+            Sinh viên nói gì về <span className="lime-text">Auto ĐKMH</span>
+          </h2>
+          <p className="mt-4 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 text-lg text-fg-300">
+            <span className="lime-text font-bold">★★★★★</span>
+            5.0 · 6 đánh giá · 1.000+ người dùng trên Chrome Web Store
+          </p>
+        </div>
+
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {TESTIMONIALS.map((t) => (
+            <figure
+              key={t.name}
+              className="flex flex-col rounded-2xl border border-white/8 bg-white/[0.015] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-white/15"
+            >
+              <div
+                className="lime-text text-base font-bold"
+                aria-label="5 trên 5 sao"
+              >
+                ★★★★★
+              </div>
+              <blockquote className="mt-4 flex-1 text-pretty text-[15px] leading-7 text-fg-200">
+                “{t.text}”
+              </blockquote>
+              <figcaption className="mt-5 flex items-center gap-3">
+                <span
+                  className="flex h-10 w-10 flex-none items-center justify-center rounded-full text-sm font-bold text-[#06222a]"
+                  style={{ background: t.color }}
+                  aria-hidden="true"
+                >
+                  {t.initial}
+                </span>
+                <span className="min-w-0">
+                  <span className="block text-sm font-semibold text-fg-100">
+                    {t.name}
+                  </span>
+                  <span className="block text-xs text-fg-400">
+                    {t.date} · Chrome Web Store
+                  </span>
+                </span>
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </section>
 
