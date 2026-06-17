@@ -241,9 +241,9 @@ export default function AIChatDemo() {
     <div className="relative">
       <div className="pointer-events-none absolute -inset-6 -z-10 rounded-[2.5rem] bg-lime-100/10 blur-3xl" />
 
-      <div className="glass overflow-hidden rounded-2xl shadow-2xl">
+      <div className="glass flex h-[540px] flex-col overflow-hidden rounded-2xl shadow-2xl">
         {/* header */}
-        <div className="flex items-center gap-2.5 border-b border-white/8 bg-white/[0.02] px-4 py-3">
+        <div className="flex flex-none items-center gap-2.5 border-b border-white/8 bg-white/[0.02] px-4 py-3">
           <Avatar />
           <div className="leading-tight">
             <div className="text-sm font-semibold text-fg-100">Trợ lý AI</div>
@@ -260,7 +260,7 @@ export default function AIChatDemo() {
         {/* conversation */}
         <div
           ref={scrollRef}
-          className="no-scrollbar h-[360px] space-y-3 overflow-y-auto px-4 py-5"
+          className="no-scrollbar min-h-0 flex-1 space-y-3 overflow-y-auto px-4 py-5"
         >
           {SCRIPT.slice(0, visible).map((m) =>
             m.role === "user" ? (
@@ -277,11 +277,12 @@ export default function AIChatDemo() {
         </div>
 
         {/* input */}
-        <div className="border-t border-white/8 px-4 py-3">
-          <div className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.02] px-3 py-2.5">
-            <span className="flex-1 truncate text-sm text-fg-200">
+        <div className="flex-none border-t border-white/8 px-4 py-3">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.02] px-3.5 py-3">
+            {/* text area */}
+            <div className="min-h-6 text-sm leading-6 text-fg-200">
               {draft ? (
-                <>
+                <span className="wrap-break-word">
                   {draft}
                   <span
                     className="ml-px inline-block w-px text-lime-100"
@@ -289,30 +290,62 @@ export default function AIChatDemo() {
                   >
                     |
                   </span>
-                </>
+                </span>
               ) : (
                 <span className="text-fg-500">Hỏi AI…</span>
               )}
-            </span>
-            <span
-              className={`flex h-8 w-8 items-center justify-center rounded-lg transition ${
-                draft || typingUser
-                  ? "bg-gradient-to-br from-[#22d3ee] to-[#38bdf8] text-[#06222a]"
-                  : "bg-white/5 text-fg-500"
-              }`}
-            >
-              <svg
-                viewBox="0 0 24 24"
-                className="h-4 w-4"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M12 19V5M5 12l7-7 7 7" />
-              </svg>
-            </span>
+            </div>
+            {/* controls */}
+            <div className="mt-2.5 flex items-center justify-between">
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg text-fg-400 transition hover:bg-white/5">
+                <svg
+                  viewBox="0 0 24 24"
+                  className="h-[18px] w-[18px]"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+              </span>
+              <div className="flex items-center gap-1">
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg text-fg-400 transition hover:bg-white/5">
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="h-[18px] w-[18px]"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z" />
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v3" />
+                  </svg>
+                </span>
+                <span
+                  className={`flex h-8 w-8 items-center justify-center rounded-full transition ${
+                    draft || typingUser
+                      ? "bg-gradient-to-br from-[#22d3ee] to-[#38bdf8] text-[#06222a]"
+                      : "bg-white/10 text-fg-500"
+                  }`}
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M12 19V5M5 12l7-7 7 7" />
+                  </svg>
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

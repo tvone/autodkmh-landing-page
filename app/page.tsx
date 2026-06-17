@@ -966,7 +966,7 @@ export default function Home() {
       {/* ----------------------- Showcase C: AI assistant -------------------- */}
       <section id="ai" className="mx-auto w-full max-w-7xl px-5 py-20">
         <div className="grid items-center gap-14 lg:grid-cols-2">
-          <div className="order-1">
+          <div className="order-1 min-w-0">
             <AIChatDemo />
           </div>
           <div className="order-2">
@@ -1170,6 +1170,13 @@ export default function Home() {
               </Link>
             ))}
         </div>
+
+        <Link
+          href="/blog"
+          className="mt-8 flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.02] px-5 py-3.5 text-sm font-semibold text-lime-100 transition hover:bg-white/5 sm:hidden"
+        >
+          Xem tất cả bài viết →
+        </Link>
       </section>
 
       {/* ------------------------------- CTA --------------------------------- */}
@@ -1246,6 +1253,11 @@ export default function Home() {
                   <a href="#faq" className="transition hover:text-fg-100">
                     FAQ
                   </a>
+                </li>
+                <li>
+                  <Link href="/blog" className="transition hover:text-fg-100">
+                    Blog
+                  </Link>
                 </li>
               </ul>
             </div>
