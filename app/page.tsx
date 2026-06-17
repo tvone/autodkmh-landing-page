@@ -1230,9 +1230,9 @@ export default function Home() {
               </p>
             </div>
             <div>
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-fg-300">
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-fg-300">
                 Sản phẩm
-              </h4>
+              </h3>
               <ul className="mt-4 space-y-2.5 text-sm text-fg-400">
                 <li>
                   <a href="#features" className="transition hover:text-fg-100">
@@ -1262,9 +1262,9 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-fg-300">
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-fg-300">
                 Hỗ trợ
-              </h4>
+              </h3>
               <ul className="mt-4 space-y-2.5 text-sm text-fg-400">
                 <li>
                   <a
