@@ -57,6 +57,13 @@ const UNIVERSITIES = [
   "HUMG",
   "EIU",
   "DHV",
+  "BDU",
+  "HTU",
+  "PVU",
+  "TUETECH",
+  "TNUT",
+  "VNUF",
+  "BAFU",
   // "UEH",
   // "NEU",
   // "HUST",
@@ -108,7 +115,7 @@ const FAQS = [
   },
   {
     q: "Trường của tôi có được hỗ trợ không?",
-    a: "Tiện ích hỗ trợ VNUA, PTIT, HCMIU, HANU, FTU, HCMUAF, SGU, STU, HUMG, EIU, DHV và nhiều trường dùng nền tảng tương thích. Hãy cài thử để kiểm tra trường của bạn.",
+    a: "Tiện ích hỗ trợ VNUA, PTIT, HCMIU, HANU, FTU, HCMUAF, SGU, STU, HUMG, EIU, DHV, BDU, HTU, PVU, TUETECH, TNUT, VNUF, BAFU và nhiều trường dùng nền tảng tương thích. Hãy cài thử để kiểm tra trường của bạn.",
   },
   {
     q: "Auto ĐKMH có miễn phí không?",

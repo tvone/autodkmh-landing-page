@@ -6,7 +6,7 @@ import { SiteHeader, SiteFooter, InstallButton } from "../ui";
 export const metadata: Metadata = {
   title: "Blog — Hướng dẫn đăng ký môn học tự động theo từng trường",
   description:
-    "Hướng dẫn đăng ký môn học tự động, mẹo vượt CAPTCHA và canh giờ mở cổng cho sinh viên VNUA, PTIT, HCMIU, HANU, FTU, HCMUAF, SGU, STU, HUMG, EIU, DHV và nhiều trường khác.",
+    "Hướng dẫn đăng ký môn học tự động, mẹo vượt CAPTCHA và canh giờ mở cổng cho sinh viên VNUA, PTIT, HCMIU, HANU, FTU, HCMUAF, SGU, STU, HUMG, EIU, DHV, BDU, HTU, PVU, TUETECH, TNUT, VNUF, BAFU và nhiều trường khác.",
 
   alternates: { canonical: "/blog" },
   openGraph: {

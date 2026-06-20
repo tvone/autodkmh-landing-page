@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 const TITLE =
   "Auto ĐKMH All-in-One — Đăng ký môn học tự động cho sinh viên";
 const DESCRIPTION =
-  "Tiện ích Chrome giúp sinh viên đăng ký môn học tự động: giải CAPTCHA, tự đăng nhập, giữ phiên, quản lý nhiều tài khoản và trợ lý AI tra cứu lịch học, điểm số. Hỗ trợ VNUA, PTIT, HCMIU, HANU, FTU, HCMUAF, SGU, STU, HUMG, EIU, DHV và nhiều trường.";
+  "Tiện ích Chrome giúp sinh viên đăng ký môn học tự động: giải CAPTCHA, tự đăng nhập, giữ phiên, quản lý nhiều tài khoản và trợ lý AI tra cứu lịch học, điểm số. Hỗ trợ VNUA, PTIT, HCMIU, HANU, FTU, HCMUAF, SGU, STU, HUMG, EIU, DHV, BDU, HTU, PVU, TUETECH, TNUT, VNUF, BAFU và nhiều trường.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -46,6 +46,24 @@ export const metadata: Metadata = {
     "đăng ký tín chỉ Đại học Mỏ - Địa chất",
     "đăng ký môn học Đại học Quốc tế Miền Đông",
     "đăng ký môn học Đại học Hùng Vương TP.HCM",
+    "đăng ký môn học BDU",
+    "đăng ký môn học Đại học Bình Dương",
+    "đăng ký môn học HTU",
+    "đăng ký môn học Đại học Hà Tĩnh",
+    "đăng ký môn học PVU",
+    "đăng ký môn học Đại học Dầu khí Việt Nam",
+    "đăng ký môn học TUETECH",
+    "đăng ký môn học Đại học Kinh tế - Công nghệ Thái Nguyên",
+    "đăng ký môn học TNUT",
+    "đăng ký môn học Đại học Kỹ thuật Công nghiệp Thái Nguyên",
+    "đăng ký môn học VNUF",
+    "đăng ký môn học Đại học Lâm nghiệp Việt Nam",
+    "đăng ký môn học BAFU",
+    "đăng ký môn học Đại học Nông - Lâm Bắc Giang",
+    "auto đkmh thái nguyên",
+    "auto dkmh thái nguyên",
+    "đkmh thái nguyên",
+    "dkmh thái nguyên",
   ],
   authors: [{ name: "langlaphieuluu9x" }],
   creator: "langlaphieuluu9x",
